@@ -34,7 +34,7 @@ export default function About({ pageInfo}: Props) {
         />
         <div className='space-y-2 sm:space-y-2 px-0 md:px-10'>
             <h4 className='text-2xl font-semibold'>Here is a <span className='underline decoration-[#F7AB0A]/50'>little</span>{" "} background</h4>
-            <p className='text-sm h-40 overflow-y-scroll scrollbar scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/50'>
+            <p className='text-sm h-40 overflow-y-scroll  scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/50'>
               {pageInfo?.backgroundInformation}
             </p>
         </div>

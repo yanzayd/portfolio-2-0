@@ -10,7 +10,7 @@ import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import WorkExperience from '../components/WorkExperience'
 import styles from '../styles/Home.module.css'
-import { Experience, PageInfo, Project, Skill, Social } from '../typings'
+import { Experience, PageInfo, Project, SkillType, Social } from '../typings'
 import { fetchExperience } from '../utils/fetchExperiences'
 import { fetchPageInfo } from '../utils/fetchPageInfo'
 import { fetchProject } from '../utils/fetchProjects'
@@ -20,7 +20,7 @@ import { fetchSocial } from '../utils/fetchSocials'
 type Props = {
   pageInfo: PageInfo;  
   experience: Experience[];
-  skills: Skill[];
+  skills: SkillType[];
   projects: Project[];
   socials: Social[];
 }
@@ -69,7 +69,7 @@ const Home = ({ pageInfo, skills, experience, socials, projects }: Props) => {
        <footer className='sticky top-5 sm:top-1 bottom-5 sm:bottom-1 h-0 sm:h-12 w-full cursor-pointer'>
         <div className="flex items-center justify-center">
           <img 
-             src="https://media-exp1.licdn.com/dms/image/C4D03AQGeY1YKe3--_g/profile-displayphoto-shrink_200_200/0/1629215262522?e=2147483647&v=beta&t=lo0CgIHMWETj0o6tAPgcvTasngWl77KPrV3VECRIK14" 
+             src="https://res.cloudinary.com/dayffumrr/image/upload/v1784594458/avatar_te0fky.jpg" 
              alt="" 
              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer" 
           />
@@ -86,7 +86,7 @@ export default Home
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo= await fetchPageInfo()
   const experience: Experience[] = await fetchExperience()
-  const skills: Skill[] = await fetchSkills()
+  const skills: SkillType[] = await fetchSkills()
   const projects: Project[] = await fetchProject()
   const socials: Social[] = await fetchSocial()
 
