@@ -1,7 +1,7 @@
  import type { NextApiRequest, NextApiResponse } from "next";
  import { groq } from 'next-sanity'
  import { sanityClient } from "../../sanity";
-import { Skill } from "../../typings";
+import { SkillType } from "../../typings";
 
  //create a groq query
  const query = groq`
@@ -11,7 +11,7 @@ import { Skill } from "../../typings";
  
  `
  type Data = {
-    skills: Skill[]
+    skills: SkillType[]
  }
 
  // create a type definition
@@ -19,7 +19,7 @@ import { Skill } from "../../typings";
     req: NextApiRequest,
     res: NextApiResponse<Data>
   ) {
-    const skills: Skill[] = await sanityClient.fetch(query)
+    const skills: SkillType[] = await sanityClient.fetch(query)
 
     res.status(200).json({ skills })
   }
